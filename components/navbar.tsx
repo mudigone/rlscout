@@ -28,7 +28,7 @@ const Navbar = () => {
   return (
     <div className="flex px-8 py-4 items-center justify-between sticky">
       <div className="flex justify-center items-center space-x-2">
-        <Link href="/dashboard">
+        <Link href="/">
           <h1 className="font-bold">RFScout</h1>
         </Link>
       </div>
@@ -48,7 +48,7 @@ const Navbar = () => {
             <DropdownMenuContent className="bg-white">
               <DropdownMenuLabel>My Account</DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <Link href="/settings/profile">
+              <Link href="/profile">
                 <DropdownMenuItem className="hover:bg-gray-100 cursor-pointer">
                   Profile
                 </DropdownMenuItem>
