@@ -12,6 +12,7 @@ import { Input } from "@/components/ui/input";
 import supabase from "@/lib/db";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
@@ -42,6 +43,8 @@ const formSchema = z.object({
 const SignUp = () => {
   const [loading, setLoading] = useState(false);
 
+  const router = useRouter();
+
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -65,8 +68,11 @@ const SignUp = () => {
             inGameName: data.inGameName,
             email: data.email,
           },
+          emailRedirectTo: "https://rlscout.vercel.app/",
         },
       });
+      window.alert("Check your email for the confirmation link!");
+      router.push("/");
 
       if (error) {
         form.setError("password", {
