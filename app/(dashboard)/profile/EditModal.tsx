@@ -31,7 +31,7 @@ interface User {
   email: string;
   ingamename: string;
   username: string;
-  id: string;
+  id: string | null | undefined;
 }
 
 interface EditModalProps {
@@ -52,7 +52,7 @@ const EditModal: React.FC<EditModalProps> = ({ user }) => {
     },
   });
 
-  const handleSubmit = async (data: User) => {
+  const handleSubmit = async (data: any) => {
     try {
       setLoading(true);
       const { error } = await supabase
