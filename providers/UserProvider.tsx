@@ -53,7 +53,9 @@ function UserProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   return (
-    <UserContext.Provider value={{ user }}>{children}</UserContext.Provider>
+    <UserContext.Provider value={{ user, setUser }}>
+      {user ? children : "Loading..."}
+    </UserContext.Provider>
   );
 }
 
