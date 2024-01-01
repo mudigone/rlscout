@@ -1,5 +1,6 @@
 import Navbar from "@/components/navbar";
 import UserProvider from "@/providers/UserProvider";
+// export const revalidate = 0;
 
 export default function RootLayout({
   children,
