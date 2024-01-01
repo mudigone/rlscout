@@ -134,7 +134,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         </div>
         <div className="flex gap-4 mt-3">
           {userReviews?.map((review) => (
-            <Card>
+            <Card id={review.id}>
               <CardHeader>
                 <Rating name="read-only" value={review.rating} readOnly />
                 <Separator />

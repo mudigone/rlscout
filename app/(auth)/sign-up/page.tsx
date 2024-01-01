@@ -63,12 +63,12 @@ const SignUp = () => {
         email: data.email,
         password: data.confirmPassword,
         options: {
+          emailRedirectTo: "https://rlscout.vercel.app/",
           data: {
             username: data.username,
             inGameName: data.inGameName,
             email: data.email,
           },
-          emailRedirectTo: "https://rlscout.vercel.app/",
         },
       });
       window.alert("Check your email for the confirmation link!");
